@@ -20,7 +20,7 @@ const Card = ({ title, description, image, type }: CardProps) => {
         <h2 className='text-2xl font-bold'>{title}</h2>
         <p>{description}</p>
       </Stack>
-      <div className='w-full max-w-[600px]'>
+      <div className='w-full max-w-[1200px]'>
         {image instanceof Array ? (
           <Swiper
             color='black'
@@ -34,12 +34,12 @@ const Card = ({ title, description, image, type }: CardProps) => {
           >
             {image.map((item, index) => (
               <SwiperSlide key={index}>
-                <Image src={item} alt={title} width={600} height={400} />
+                <Image src={item} alt={title} width={1200} height={800} />
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <Image src={image} alt={title} width={600} height={400} />
+          <Image src={image} alt={title} width={1200} height={800} />
         )}
       </div>
     </Stack>
