@@ -17,29 +17,13 @@ type CardProps = {
 }
 
 const Card = ({ title, description, image, type }: CardProps) => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 900) {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
   return (
-    <div
-      className={cn('grid grid-flow-row-dense gap-8', isMobile ? 'grid-cols-1 grid-rows-[auto_minmax(0,_1fr)]' : 'grid-cols-3 grid-rows-1')}
-    >
-      <Stack className={cn(type === 'text-first' ? 'order-1' : 'order-2', 'px-8')} direction='col' gap='gap-2'>
+    <div className='grid grid-flow-row-dense grid-cols-1 grid-rows-[auto_minmax(0,_1fr)] gap-8 md:grid-cols-3 md:grid-rows-1'>
+      <Stack className={cn(type === 'text-first' ? 'md:order-1' : 'md:order-2', 'px-8')} direction='col' gap='gap-2'>
         <h2 className='text-2xl font-bold'>{title}</h2>
         <p>{description}</p>
       </Stack>
-      <div className={cn(isMobile || type === 'text-first' ? 'order-2' : 'order-1', 'col-span-2', 'w-full')}>
+      <div className={cn(type === 'text-first' ? 'md:order-2' : 'md:order-1', 'col-span-2', 'w-full')}>
         {image instanceof Array ? (
           <Swiper
             color='black'
