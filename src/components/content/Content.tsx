@@ -1,14 +1,15 @@
 'use client'
-import { useEffect, useMemo, useState } from 'react'
 import cn from 'classnames'
 import Image from 'next/image'
 import { Stack } from '../stack'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+
 type CardProps = {
   title: string
   description: string | React.ReactNode
@@ -34,8 +35,6 @@ const Card = ({ title, description, image, type }: CardProps) => {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
           >
             {image.map((item, index) => (
               <SwiperSlide key={index}>
@@ -47,18 +46,15 @@ const Card = ({ title, description, image, type }: CardProps) => {
           <Image src={image} alt={title} width={2000} height={700} />
         )}
       </div>
-      {/* </Stack> */}
     </div>
   )
 }
 
 type VideoProps = {
-  title: string
-  description: string
   video: string
 }
 
-const Video = ({ title, description, video }: VideoProps) => {
+const Video = ({ video }: VideoProps) => {
   return (
     <video className='w-full' autoPlay muted controls={false}>
       <source src={video} type='video/mp4' />
@@ -70,7 +66,7 @@ const Video = ({ title, description, video }: VideoProps) => {
 const Content = () => {
   return (
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
-      <Video title='Video 1' description='This is video 1' video='/test.mp4' />
+      <Video video='/test.mp4' />
       <Card
         title={'지구를 지키는 가장 세련된 방법'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}
