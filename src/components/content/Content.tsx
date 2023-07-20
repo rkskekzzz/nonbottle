@@ -4,10 +4,11 @@ import cn from 'classnames'
 import Image from 'next/image'
 import { Stack } from '../stack'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 type CardProps = {
   title: string
   description: string | React.ReactNode
@@ -31,7 +32,9 @@ const Card = ({ title, description, image, type }: CardProps) => {
   }, [])
 
   return (
-    <div className={cn('grid grid-flow-row-dense gap-8', !isMobile ? 'grid-cols-3 grid-rows-1' : '')}>
+    <div
+      className={cn('grid grid-flow-row-dense gap-8', isMobile ? 'grid-cols-1 grid-rows-[auto_minmax(0,_1fr)]' : 'grid-cols-3 grid-rows-1')}
+    >
       <Stack className={cn(type === 'text-first' ? 'order-1' : 'order-2', 'px-8')} direction='col' gap='gap-2'>
         <h2 className='text-2xl font-bold'>{title}</h2>
         <p>{description}</p>
@@ -40,7 +43,9 @@ const Card = ({ title, description, image, type }: CardProps) => {
         {image instanceof Array ? (
           <Swiper
             color='black'
-            modules={[Navigation, Pagination]}
+            autoplay={{ delay: 5000 }}
+            loop={true}
+            modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
             navigation
