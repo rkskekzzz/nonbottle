@@ -97,7 +97,7 @@ const Content = () => {
       <Card
         title={'넌버틀의 가치'}
         description={'그린워싱, 걱정하지말고 눈으로 직접 보세요'}
-        image={['/product/자갈제품.png', '/product/그린워싱2.png']}
+        image={['/product/자갈제품.png', '/product/제품2.png']}
         type='text-first'
       />
       <Card title={'Contact us'} description={'용기 협업부터 제품 판매까지'} image='/test.png' type='image-first' />
