@@ -56,7 +56,7 @@ type VideoProps = {
 
 const Video = ({ video }: VideoProps) => {
   return (
-    <video className='w-full' autoPlay muted controls={false}>
+    <video className='w-full' autoPlay muted controls={false} playsInline>
       <source src={video} type='video/mp4' />
       Your browser does not support the video tag.
     </video>
@@ -66,12 +66,12 @@ const Video = ({ video }: VideoProps) => {
 const Content = () => {
   return (
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
-      <Video video='/title_video.mp4' />
+      <Video video='/product/1-0.mp4' />
       <h1 className='w-full p-8 text-center text-7xl font-bold'>Non-Bottle</h1>
       <Card
         title={'"지구를 지키는 가장 세련된 방법"'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}
-        image={['/product/내용물1.png', '/product/내용물2.png']}
+        image={['/product/2-1.png', '/product/2-2.png']}
         type='text-first'
       />
       <Card
@@ -83,7 +83,7 @@ const Content = () => {
             <span>살짝 부러뜨려 물에 녹여 보내세요</span>
           </div>
         }
-        image='/product/레몬배경옐로우.png'
+        image={['/product/3-1.png', '/product/3-2.jpg']}
         type='image-first'
       />
       <Card
@@ -98,7 +98,7 @@ const Content = () => {
             <span>사용이 끝날때까지 완벽한 방수를</span>
           </div>
         }
-        image={['/product/자갈제품.png', '/product/제품2.png']}
+        image={['/product/4-1.png']}
         type='text-first'
       />
       <Card
@@ -109,7 +109,7 @@ const Content = () => {
             <span>sadol7797@gmail.com</span>
           </div>
         }
-        image='/test.png'
+        image={['/product/5-1.jpg', '/product/5-2.jpg']}
         type='image-first'
       />
     </Stack>

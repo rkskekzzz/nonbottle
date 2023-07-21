@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import { Stack } from '../stack'
+import Image from 'next/image'
 
 const Header = () => {
   return (
     <header className='h-[60px] w-full'>
-      <Stack className='h-full' direction='row' justify='center' align='center' gap='gap-2'>
-        <div>로고</div>
-      </Stack>
+      <div className='flex h-full items-center justify-center'>
+        <Image src='/logo.png' alt='logo' width={40} height={40} />
+      </div>
     </header>
   )
 }
