@@ -19,9 +19,9 @@ type CardProps = {
 
 const Card = ({ title, description, image, type }: CardProps) => {
   return (
-    <div className='grid grid-flow-row-dense grid-cols-1 grid-rows-[auto_minmax(0,_1fr)] gap-8 md:grid-cols-3 md:grid-rows-1'>
+    <div className='grid grid-flow-row-dense grid-cols-1 grid-rows-[auto_minmax(_1fr,_1fr)] gap-y-8 md:grid-cols-3 md:grid-rows-1 md:gap-8'>
       <Stack className={cn(type === 'text-first' ? 'md:order-1' : 'md:order-2', 'px-8')} direction='col' gap='gap-2'>
-        <h2 className='mb-4 text-2xl font-bold'>{title}</h2>
+        <h2 className='mb-4 text-xl font-bold md:text-2xl'>{title}</h2>
         <div>{description}</div>
       </Stack>
       <div className={cn(type === 'text-first' ? 'md:order-2' : 'md:order-1', 'col-span-2', 'w-full')}>
@@ -67,7 +67,7 @@ const Content = () => {
   return (
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
       <Video video='/product/1-0.mp4' />
-      <h1 className='w-full p-8 text-center text-7xl font-bold'>Non-Bottle</h1>
+      <h1 className='w-full text-center text-5xl font-bold md:text-7xl'>Non-Bottle</h1>
       <Card
         title={'"지구를 지키는 가장 세련된 방법"'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}

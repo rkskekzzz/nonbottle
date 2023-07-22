@@ -3,7 +3,7 @@ import { Stack } from '../stack'
 const Footer = () => {
   return (
     <footer className='bg-neutral-800 text-neutral-100'>
-      <Stack direction='row' gap='gap-4' className='px-6 py-4'>
+      {/* <Stack direction='row' gap='gap-4' className='px-6 py-4'>
         <section className='max-w-[500px]'>
           <h3 className='mb-2'>넌버틀</h3>
           <div className='text-sm text-[#c2c2c2]'>
@@ -37,7 +37,7 @@ const Footer = () => {
             <span>facebook</span>
           </Stack>
         </Stack>
-      </section>
+      </section> */}
     </footer>
   )
 }
