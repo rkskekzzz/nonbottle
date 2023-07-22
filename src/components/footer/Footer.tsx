@@ -7,17 +7,17 @@ const Footer = () => {
         <section className='max-w-[500px]'>
           <h3 className='mb-2'>{process.env.NEXT_PUBLIC_COMPANY_NAME}</h3>
           <div className='text-sm text-[#c2c2c2]'>
-            {`사업자등록번호 ${process.env.NEXT_PUBLIC_ID}`}
+            {`사업자등록번호 ${process.env.NEXT_PUBLIC_COMPANY_ID}`}
             <span className='mx-[10px] mt-[7px] inline-block h-[10px] w-[1px] bg-[#c2c2c2]' />
-            {`대표이사 ${process.env.NEXT_PUBLIC_CEO}`}
+            {`대표이사 ${process.env.NEXT_PUBLIC_COMPANY_CEO}`}
             <span className='mx-[10px] mt-[7px] inline-block h-[10px] w-[1px] bg-[#c2c2c2]' />
             {`통신판매업신고번호 ${process.env.NEXT_PUBLIC_COMPANY_MAIL_ORDER_SALES_REGISTRATION_NO}`}
             <span className='mx-[10px] mt-[7px] inline-block h-[10px] w-[1px] bg-[#c2c2c2]' />
-            {`전화번호 ${process.env.NEXT_PUBLIC_PHONE}`}
+            {`전화번호 ${process.env.NEXT_PUBLIC_COMPANY_PHONE}`}
             <span className='mx-[10px] mt-[7px] inline-block h-[10px] w-[1px] bg-[#c2c2c2]' />
-            {`이메일 ${process.env.NEXT_PUBLIC_EMAIL}`}
+            {`이메일 ${process.env.NEXT_PUBLIC_COMPANY_EMAIL}`}
             <span className='mx-[10px] mt-[7px] inline-block h-[10px] w-[1px] bg-[#c2c2c2]' />
-            {`주소 ${process.env.NEXT_PUBLIC_ADDRESS}`}
+            {`주소 ${process.env.NEXT_PUBLIC_COMPANY_ADDRESS}`}
           </div>
         </section>
         {/* <section>
