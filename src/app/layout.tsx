@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: 'https://nonbottle.kr',
-    title: '셀바이데이',
-    description: '외출할때, 지금 셀바이데이',
+    title: 'Non-Bottle',
+    description: '지구를 지키는 가장 세련된 방법',
     images: [
       {
         url: './og.png',
