@@ -25,7 +25,7 @@ const Card = ({ title, description, image, type }: CardProps) => {
         <h2 className='mb-4 text-xl font-bold md:text-2xl'>{title}</h2>
         <div>{description}</div>
       </Stack>
-      <div className={cn(type === 'text-first' ? 'md:order-2' : 'md:order-1', 'col-span-2', 'w-full')}>
+      <div className={cn(type === 'text-first' ? 'pr-8 md:order-2 md:pr-0' : 'pl-8 md:order-1 md:pl-0', 'col-span-2 w-full')}>
         {image instanceof Array ? (
           <Swiper
             color='black'
@@ -39,12 +39,12 @@ const Card = ({ title, description, image, type }: CardProps) => {
           >
             {image.map((item, index) => (
               <SwiperSlide key={index}>
-                <Image src={item} alt={title} width={2000} height={700} />
+                <Image src={item} alt={title} width={2000} height={700} placeholder='empty' />
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <Image src={image} alt={title} width={2000} height={700} />
+          <Image src={image} alt={title} width={2000} height={700} placeholder='empty' />
         )}
       </div>
     </div>
@@ -89,7 +89,7 @@ const Content = () => {
         align='center'
         className={cn('fixed top-0 z-10 h-[60px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
       >
-        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={24} height={24} />
+        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={24} height={24} placeholder='empty' />
         <h1 className='text-2xl font-bold'>Non-Bottle</h1>
       </Stack>
       <Stack ref={titleRef} align='center'>
@@ -99,7 +99,7 @@ const Content = () => {
       <Card
         title={'"지구를 지키는 가장 세련된 방법"'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}
-        image={['/product/2-1.png', '/product/2-2.png']}
+        image={['/product/2-1.jpg', '/product/2-2.jpg']}
         type='text-first'
       />
       <Card
@@ -111,7 +111,7 @@ const Content = () => {
             <span>살짝 부러뜨려 물에 녹여 보내세요</span>
           </div>
         }
-        image={['/product/3-1.png', '/product/3-2.jpg']}
+        image={['/product/3-1.jpg', '/product/3-2.jpg']}
         type='image-first'
       />
       <Card
@@ -126,7 +126,7 @@ const Content = () => {
             <span>사용이 끝날때까지 완벽한 방수를</span>
           </div>
         }
-        image={['/product/4-1.png']}
+        image={['/product/4-1.jpg']}
         type='text-first'
       />
       <Card
