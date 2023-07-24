@@ -86,16 +86,14 @@ const Content = () => {
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
       <Stack
         align='center'
-        className={cn('fixed top-0 z-10 h-[60px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
+        className={cn('fixed top-0 z-10 h-[50px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
       >
-        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={24} height={24} placeholder='empty' />
-        <h1 className='text-2xl font-bold'>Non-Bottle</h1>
+        <Image className='ml-8 mr-4' src='/logo-title.png' alt='logo' width={120} height={24} placeholder='empty' />
       </Stack>
       <div ref={titleRef}>
         <Video video='/product/1-0.mp4' />
         <Stack className='mt-[100px]' align='center'>
-          <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={30} height={30} />
-          <h1 className='text-3xl font-bold'>Non-Bottle</h1>
+          <Image className='ml-8 mr-4' src='/logo-title.png' alt='logo' width={180} height={30} />
         </Stack>
       </div>
       <Card
