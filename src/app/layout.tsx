@@ -16,8 +16,22 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'Nonbottle',
-  description: 'Nonbottle',
+  title: 'Non-Bottle',
+  description: 'Non-Bottle',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://nonbottle.kr',
+    title: '셀바이데이',
+    description: '외출할때, 지금 셀바이데이',
+    images: [
+      {
+        url: './og.png',
+        width: 512,
+        height: 512,
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
