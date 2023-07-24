@@ -57,7 +57,7 @@ type VideoProps = {
 
 const Video = ({ video }: VideoProps) => {
   return (
-    <video className='w-full' autoPlay muted controls={false} playsInline>
+    <video className='w-full' autoPlay muted controls={false} playsInline loop>
       <source src={video} type='video/mp4' />
       Your browser does not support the video tag.
     </video>
