@@ -86,7 +86,10 @@ const Content = () => {
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
       <Stack
         align='center'
-        className={cn('fixed top-0 z-10 h-[50px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
+        className={cn(
+          'fixed top-0 z-10 h-[50px] w-full bg-white shadow-lg transition ease-in-out',
+          isOut ? '' : '-translate-y-full opacity-0',
+        )}
       >
         <Image className='ml-8 mr-4' src='/logo-title.png' alt='logo' width={120} height={24} placeholder='empty' />
       </Stack>
