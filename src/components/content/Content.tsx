@@ -9,6 +9,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import { useEffect, useRef, useState } from 'react'
 
 type CardProps = {
   title: string
@@ -64,10 +65,37 @@ const Video = ({ video }: VideoProps) => {
 }
 
 const Content = () => {
+  const titleRef = useRef(null)
+  const [isOut, setIsOut] = useState(false)
+
+  useEffect(() => {
+    if (!titleRef.current) return
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsOut(false)
+        } else {
+          setIsOut(true)
+        }
+      })
+    })
+    observer.observe(titleRef.current)
+  }, [])
+
   return (
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
       <Video video='/product/1-0.mp4' />
-      <h1 className='w-full text-center text-5xl font-bold md:text-7xl'>Non-Bottle</h1>
+      <Stack
+        align='center'
+        className={cn('fixed top-0 z-10 h-[60px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
+      >
+        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={24} height={24} />
+        <h1 className='text-2xl font-bold'>Non-Bottle</h1>
+      </Stack>
+      <Stack ref={titleRef} align='center'>
+        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={30} height={30} />
+        <h1 className='text-3xl font-bold'>Non-Bottle</h1>
+      </Stack>
       <Card
         title={'"지구를 지키는 가장 세련된 방법"'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}

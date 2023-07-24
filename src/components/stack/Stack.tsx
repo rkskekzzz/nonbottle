@@ -1,3 +1,4 @@
+import React, { forwardRef } from 'react'
 import cn from 'classnames'
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
   gap?: string
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Stack = ({ children, className, justify, align, direction, gap }: Props) => {
+const Stack = React.forwardRef<HTMLDivElement, Props>(({ children, direction, justify, align, gap, className, ...props }, ref) => {
   const justifyValue = {
     start: 'justify-start',
     end: 'justify-end',
@@ -33,7 +34,12 @@ const Stack = ({ children, className, justify, align, direction, gap }: Props) =
     'col-reverse': 'flex-col-reverse',
   }[direction || 'row']
 
-  return <div className={cn('flex', 'flex-wrap', justifyValue, alignValue, directionValue, gap, className)}>{children}</div>
-}
+  return (
+    <div ref={ref} className={cn('flex', 'flex-wrap', justifyValue, alignValue, directionValue, gap, className)} {...props}>
+      {children}
+    </div>
+  )
+})
 
+Stack.displayName = 'Stack'
 export default Stack
