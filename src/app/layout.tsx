@@ -17,7 +17,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Non-Bottle',
-  description: 'Non-Bottle',
+  description: '지구를 지키는 가장 세련된 방법',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
