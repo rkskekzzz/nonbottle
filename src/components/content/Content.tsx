@@ -84,7 +84,6 @@ const Content = () => {
 
   return (
     <Stack className='w-full pb-20' direction='col' gap='gap-[100px]'>
-      <Video video='/product/1-0.mp4' />
       <Stack
         align='center'
         className={cn('fixed top-0 z-10 h-[60px] w-full bg-white shadow-lg transition ease-in-out', isOut ? '' : '-translate-y-full')}
@@ -92,10 +91,13 @@ const Content = () => {
         <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={24} height={24} placeholder='empty' />
         <h1 className='text-2xl font-bold'>Non-Bottle</h1>
       </Stack>
-      <Stack ref={titleRef} align='center'>
-        <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={30} height={30} />
-        <h1 className='text-3xl font-bold'>Non-Bottle</h1>
-      </Stack>
+      <div ref={titleRef}>
+        <Video video='/product/1-0.mp4' />
+        <Stack className='mt-[100px]' align='center'>
+          <Image className='ml-8 mr-4' src='/logo.png' alt='logo' width={30} height={30} />
+          <h1 className='text-3xl font-bold'>Non-Bottle</h1>
+        </Stack>
+      </div>
       <Card
         title={'"지구를 지키는 가장 세련된 방법"'}
         description={'넌버틀은 물에 녹는 친환경 용기에 자연에서 추출한 재료들로 만들어진 코스메틱을 담아드립니다'}
