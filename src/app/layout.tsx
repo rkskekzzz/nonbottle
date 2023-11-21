@@ -37,14 +37,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Provider>
-      <html>
-        <body className={cn(notoSansKr.className, roboto.variable)}>
+    <html>
+      <body className={cn(notoSansKr.className, roboto.variable)}>
+        <Provider>
           <Header />
           {children}
           <Footer />
-        </body>
-      </html>
-    </Provider>
+        </Provider>
+      </body>
+    </html>
   )
 }
