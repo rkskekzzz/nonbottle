@@ -91,11 +91,6 @@ const Content = ({ images }: { images: string[] }) => {
       {images.map((item) => (
         <Card key={item} image={item} />
       ))}
-      <Card image={['/product/MB_01.png']} />
-      <Card image={['/product/MB_02.png']} />
-      <Card image={['/product/MB_03.png']} />
-      <Card image={['/product/MB_04.png']} />
-      <Card image={['/product/MB_05.png']} />
     </Stack>
   )
 }
