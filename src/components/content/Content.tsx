@@ -56,7 +56,7 @@ const Video = ({ video }: VideoProps) => {
   )
 }
 
-const Content = () => {
+const Content = ({ images }: { images: string[] }) => {
   const titleRef = useRef(null)
   const [isOut, setIsOut] = useState(false)
 
@@ -88,6 +88,9 @@ const Content = () => {
       <div ref={titleRef}>
         <Video video='/product/1-0.mp4' />
       </div>
+      {images.map((item) => (
+        <Card key={item} image={item} />
+      ))}
       <Card image={['/product/MB_01.png']} />
       <Card image={['/product/MB_02.png']} />
       <Card image={['/product/MB_03.png']} />
