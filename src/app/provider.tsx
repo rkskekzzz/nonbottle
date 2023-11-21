@@ -2,7 +2,7 @@
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 
-const Provider = () => {
+const Provider = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -20,7 +20,7 @@ const Provider = () => {
     }
   }, [pathname, router])
 
-  return <div>Provider</div>
+  return <div {...props}>{children}</div>
 }
 
 export default Provider

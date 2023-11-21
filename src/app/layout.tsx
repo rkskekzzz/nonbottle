@@ -1,6 +1,7 @@
 import './globals.css'
 import cn from 'classnames'
 import { Header, Footer } from '@/components'
+import Provider from './provider'
 import type { Metadata } from 'next'
 import { Roboto, Noto_Sans_KR } from 'next/font/google' // Roboto와 한글 NotoSans를 사용합니다.
 
@@ -36,12 +37,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
-      <body className={cn(notoSansKr.className, roboto.variable)}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <Provider>
+      <html>
+        <body className={cn(notoSansKr.className, roboto.variable)}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </Provider>
   )
 }
