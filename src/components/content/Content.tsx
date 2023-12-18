@@ -18,7 +18,7 @@ type CardProps = {
 
 const Card = ({ image }: CardProps) => {
   return (
-    <div>
+    <div className='w-full'>
       {image instanceof Array ? (
         <Swiper
           color='black'
@@ -32,12 +32,12 @@ const Card = ({ image }: CardProps) => {
         >
           {image.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image src={item} alt={`non-bottle-${index}`} width={2000} height={700} placeholder='empty' />
+              <Image src={item} alt={`non-bottle-${index}`} width={8000} height={4000} placeholder='empty' />
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
-        <Image src={image} alt={`non-bottle`} width={2000} height={700} placeholder='empty' />
+        <Image src={image} alt={`non-bottle`} width={8000} height={4000} placeholder='empty' />
       )}
     </div>
   )
@@ -85,7 +85,7 @@ const Content = ({ images }: { images: string[] }) => {
       >
         <Image className='ml-8 mr-4' src='/logo-title.png' alt='logo' width={120} height={24} placeholder='empty' />
       </Stack>
-      <div ref={titleRef}>
+      <div ref={titleRef} className='w-full'>
         <Video video='/product/1-0.mp4' />
       </div>
       {images.map((item) => (
